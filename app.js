@@ -53,11 +53,11 @@ app.get('/nbalogos', ValidateQueryParams, SanitizeQueryParams, async (req, res) 
     }
 })
 
-const port = process.env.PORT || 6001;
+const port = process.env.PORT || 8006;
 
 mongoose.connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
 }).then(() => {
     app.listen(port, () => console.log(`Server Port is ${port}`))
 }).catch((err) => console.log(`${err} did not connect`))
