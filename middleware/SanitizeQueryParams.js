@@ -8,6 +8,7 @@ const SanitizeQueryParams = (req, res, next) => {
             ?.replace(/\s+/g, '+')             // Replace remaining spaces with '+'
             ?.toLowerCase();                   // Convert to lowercase
     }
+    
     const { teamName, teamYear } = req.query
 
     let sanitizedTeamName

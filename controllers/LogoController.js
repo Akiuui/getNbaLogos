@@ -1,4 +1,7 @@
 import Logo from "../schema/Logo.js"
+import pino from "pino"
+
+const logger = pino()
 
     async function getAllLogos(){
         return await Logo.find({})
@@ -19,6 +22,9 @@ import Logo from "../schema/Logo.js"
         })
     }
     async function getLogosByNameAndYear(teamName, teamYear){
+
+        logger.info("getLogosByNameAndYear: teamName: "+teamName+" teamYear: "+teamYear)
+
         const query = {
             $and: [
                 { teamName: teamName },
